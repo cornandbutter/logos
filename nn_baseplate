@@ -1,0 +1,45 @@
+if workspace.nn_mall then
+    workspace.nn_mall:Destroy()
+end
+if workspace.nn_russia then
+    workspace.nn_russia:Destroy()
+end
+if workspace.bots then
+    workspace.bots:Destroy()
+end
+if workspace.junk then
+    workspace.junk:Destroy()
+end
+if workspace.nn_backrooms then
+    workspace.nn_backrooms:Destroy()
+end
+if workspace.nn_port then
+    workspace.nn_port:Destroy()
+end
+if workspace.nn_tunnels then
+    workspace.nn_tunnels:Destroy()
+end
+game.Lighting.FogEnd = 999999999999999
+if game.Lighting.Atmosphere then
+    game.Lighting.Atmosphere:Destroy()
+end
+if game.Lighting.Bloom then
+    game.Lighting.Bloom:Destroy()
+end
+if game.Lighting.ColorCorrection then
+    game.Lighting.ColorCorrection:Destroy()
+end
+if game.Lighting.DepthOfField then
+    game.Lighting.DepthOfField:Destroy()
+end
+for _, def in pairs(game.Lighting:GetDescendants()) do
+	if def.ClassName ~= "defaultsky" then
+		def:Destroy()
+	end
+end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cornandbutter/logos/main/map.lua"))()
+wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.map.SpawnLocation.CFrame
+game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.map.SpawnLocation.CFrame
+end)
