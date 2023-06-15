@@ -1,3 +1,5 @@
+local plr = game.Players.LocalPlayer
+
 if workspace.nn_mall then
     workspace.nn_mall:Destroy()
 end
@@ -21,7 +23,8 @@ for _, def in pairs(game.Lighting:GetDescendants()) do
 end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/cornandbutter/logos/main/map.lua"))()
 wait(0.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.map.SpawnLocation.CFrame
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.map.SpawnLocation.CFrame
 game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.map.SpawnLocation.CFrame
+	plr.CharacterAppearanceLoaded:Wait()
+	plr.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.map.SpawnLocation.CFrame
 end)
