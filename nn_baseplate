@@ -4,6 +4,9 @@ end
 if workspace.nn_russia then
     workspace.nn_russia:Destroy()
 end
+if workspace.nn_tunnels then
+    workspace.nn_tunnels:Destroy()
+end
 if workspace.bots then
     workspace.bots:Destroy()
 end
