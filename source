@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cornandbutter/logos/main/nn_baseplate"))()
