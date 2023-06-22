@@ -32,6 +32,7 @@ local function onKeyPress(input)
 end
 userInputService.InputBegan:Connect(onKeyPress)
 game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "[SYSTEM]: Thanks for using my script. If you die, press X to teleport back.", Color = Color3.fromRGB( 255,0,0 ), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
+game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "[SYSTEM]: Make sure to use this in OPEN WORLD! other gamemodes will not work!", Color = Color3.fromRGB( 255,0,0 ), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
 while true do
 	game.Lighting.FogEnd = 4000
 	wait(1)
