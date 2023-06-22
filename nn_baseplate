@@ -16,7 +16,7 @@ end
 if workspace.junk then
     workspace.junk:Destroy()
 end
-game.Lighting.FogEnd = 999999999999999
+game.Lighting.FogEnd = 4000
 for _, def in pairs(game.Lighting:GetDescendants()) do
 	if def.ClassName ~= "defaultsky" then
 		def:Destroy()
@@ -32,3 +32,7 @@ local function onKeyPress(input)
 end
 userInputService.InputBegan:Connect(onKeyPress)
 game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "[SYSTEM]: Thanks for using my script. If you die, press X to teleport back.", Color = Color3.fromRGB( 255,0,0 ), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
+while true do
+	game.Lighting.FogEnd = 4000
+	wait(1)
+end
