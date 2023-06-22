@@ -1,4 +1,5 @@
 local plr = game.Players.LocalPlayer
+local userInputService = game:GetService("UserInputService")
 
 if workspace.nn_mall then
     workspace.nn_mall:Destroy()
@@ -24,7 +25,9 @@ end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/cornandbutter/logos/main/map.lua"))()
 wait(0.5)
 plr.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.map.SpawnLocation.CFrame
-game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-	plr.CharacterAppearanceLoaded:Wait()
-	plr.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.map.SpawnLocation.CFrame
-end)
+local function onKeyPress(input)
+    if input.KeyCode == Enum.KeyCode.X then
+        plr.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.map.SpawnLocation.CFrame
+    end
+end
+userInputService.InputBegan:Connect(onKeyPress)
