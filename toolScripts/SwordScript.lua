@@ -1,5 +1,5 @@
 Tool = script.Parent
-Handle = Tool:WaitForChild("Handle")
+Handle = Tool.Handle
 
 function Create(ty)
 	return function(data)
